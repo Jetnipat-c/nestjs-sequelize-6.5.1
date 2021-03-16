@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import { A } from 'src/ant/entity/ant.entity';
 import { B } from 'src/bird/entity/bird.entity';
+import { C } from 'src/cat/entity/cat.entity';
 import { Config } from 'src/config/config';
 
 export const databaseProviders = [
@@ -16,7 +17,7 @@ export const databaseProviders = [
         database: Config.database.database,
         timezone: '+07:00',
       });
-      sequelize.addModels([A,B]);
+      sequelize.addModels([A, B, C]);
       await sequelize.sync();
       return sequelize;
     },
