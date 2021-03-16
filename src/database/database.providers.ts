@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
+import { A } from 'src/ant/entity/ant.entity';
 import { Config } from 'src/config/config';
 
 export const databaseProviders = [
@@ -14,7 +15,7 @@ export const databaseProviders = [
         database: Config.database.database,
         timezone: '+07:00',
       });
-      sequelize.addModels([]);
+      sequelize.addModels([A]);
       await sequelize.sync();
       return sequelize;
     },
